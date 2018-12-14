@@ -42,7 +42,35 @@ video { width: 100% }
   max-height: 0;
  }
 
+ .hidden-details {
+  padding: 10%;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  transition: all 0.7s;
+  text-align: center;
+  display: none;
+ }
+
+ .modal-close{
+  color: white;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+ }
+
  .show-movie { max-height: 1200px; }
+
+ .show-details { display: block;}
 
  .more-details { 
     display: block;
@@ -73,7 +101,7 @@ video { width: 100% }
 
 .movie-details p { text-align: center; }
 
-.up-arrow { text-align: center }
+.up-arrow, .close-box{ text-align: center }
 
 .up-arrow span {
   font-size: 2em;
@@ -85,7 +113,19 @@ video { width: 100% }
   display: none;
 }
 
+.close-box span {
+  font-size: 2em;
+  padding: 8px 15px 8px;
+  border-radius: 50%;
+  font-weight: bolder;
+  background-color: rgba(255,255,255,0.2);
+  cursor: pointer;
+  display: none;
+}
+
 .show-scroller {display: inline-block !important; }
+
+.show-close {display: inline-block !important; }
 
 footer {
   position: absolute;

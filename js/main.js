@@ -15,7 +15,7 @@
             image1 : "",
             image2 : "",
             showDetails : false,
-            showLightbox : true
+            showLightbox : false
             //showLightbox : false    //trocar
         },
 
@@ -48,18 +48,20 @@
                 this.videsource = "";
             },
 
+            closeLightbox() {
+                this.showLightbox = false;
+            },
+
             fetchMovieData(movie) {
                 url = movie ? `./includes/index.php?movie=${movie}` : './includes/index.php';
 
-                fetch(url) // pass in the one or many query
+                fetch(url)
                 .then(res => res.json())
                 .then(data => {
                     if (movie) {
-                        // getting one movie, so use the single array
                         console.log(data);
                         this.singlemoviedata = data;
                     } else {
-                        // push all the video (or portfolio content) into the video array
                         console.log(data);
                         this.videodata = data;
                     }
@@ -77,7 +79,7 @@
 
                 url = details ? `./includes/index.php?details=${details}` : './includes/index.php';
 
-                fetch(url) // pass in the one or many query
+                fetch(url) 
                 .then(res => res.json())
                 .then(data => {
                   console.log(data);
@@ -86,7 +88,7 @@
                   this.image2 = data[0].details_image2;
                   this.synopsis = data[0].details_synopsis;
 
-                  //this.showLightbox = true;
+                  this.showLightbox = true;
 
                 })
                 .catch(function(error) {

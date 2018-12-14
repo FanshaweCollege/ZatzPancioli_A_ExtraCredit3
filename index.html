@@ -41,11 +41,14 @@
             <p class="movie-details">
                 {{ synopsis }}
             </p>
+            <a href="#" title="Close" class="modal-close" v-on:click="closeLightbox">Close</a>
         </section>
 
         <div class="up-arrow">
             <span v-on:click="scrollBackUp" :class="{'show-scroller': showDetails }">^</span>
         </div>
+
+
     </main>
     <script src="js/main.js"></script>
 </body>
