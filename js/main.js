@@ -10,7 +10,13 @@
             videotitle : "",
             videosource : "",
             videodescription : "",
-            showDetails : false
+            videogenre: "",
+            synopsis: "",
+            image1 : "",
+            image2 : "",
+            showDetails : false,
+            showLightbox : true
+            //showLightbox : false    //trocar
         },
 
         created : function() {
@@ -18,9 +24,6 @@
         },
 
         methods : {
-            fetchMore(e) {
-                this.fetchMovieData(e.currentTarget.dataset.movie); // this will be a number (id)
-            },
 
             loadMovie(e) {
                 // stub
@@ -60,6 +63,31 @@
                         console.log(data);
                         this.videodata = data;
                     }
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            },  
+
+            fetchMore(e) {
+
+                var details = e.currentTarget.dataset.video;
+                //console.log(details);
+
+
+                url = details ? `./includes/index.php?details=${details}` : './includes/index.php';
+
+                fetch(url) // pass in the one or many query
+                .then(res => res.json())
+                .then(data => {
+                  console.log(data);
+
+                  this.image1 = data[0].details_image1;
+                  this.image2 = data[0].details_image2;
+                  this.synopsis = data[0].details_synopsis;
+
+                  //this.showLightbox = true;
+
                 })
                 .catch(function(error) {
                     console.log(error);

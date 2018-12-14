@@ -1,0 +1,25 @@
+{
+  "name": "zatzpancioli_a_extracredit2",
+  "version": "1.0.0",
+  "description": "Extra Credit Assignment  2/3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annapancioli/ZatzPancioli_A_ExtraCredit2.git"
+  },
+  "author": "Anna Carolina Zatz Pancioli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annapancioli/ZatzPancioli_A_ExtraCredit2/issues"
+  },
+  "homepage": "https://github.com/annapancioli/ZatzPancioli_A_ExtraCredit2#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
+  }
+}
